@@ -1,5 +1,5 @@
 {
-    "name": "Andy's Pacman",
+    "name": "Pacman v2",
     "dependencies": {
         "device": "*"
     },

@@ -421,7 +421,16 @@ namespace myTiles {
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile20, function (sprite, location) {
     tiles.setTileAt(location, myTiles.tile0)
     info.changeScoreBy(1)
+    numberofpellets += -1
+    if (numberofpellets == 0) {
+        game.over(true)
+    }
 })
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile21, function (sprite, location) {
+    tiles.setTileAt(location, myTiles.tile0)
+    info.changeScoreBy(10)
+})
+let numberofpellets = 0
 let pacman = sprites.create(img`
 . . . . 5 5 5 5 5 5 5 . . . . . 
 . . 5 5 5 5 5 5 5 5 5 5 5 . . . 
@@ -544,6 +553,7 @@ blinky.vx = 30
 clyde.vx = -30
 inky.vx = -30
 pinky.vx = 30
+numberofpellets = tiles.getTilesByType(myTiles.tile20).length
 game.onUpdate(function () {
     controller.moveSprite(pacman, 50, 50)
     scene.cameraFollowSprite(pacman)
