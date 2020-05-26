@@ -1,7 +1,8 @@
 {
-    "name": "Pacman v2",
+    "name": "Pacman v3",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "animation": "*"
     },
     "description": "",
     "files": [
